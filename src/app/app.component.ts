@@ -11,4 +11,8 @@ export class AppComponent {
   name = "Laetitia";
 
   today = new Date();
+
+  imgUrl = "https://angular.io/assets/images/logos/angular/logo-nav@2x.png";
+
+  
 }

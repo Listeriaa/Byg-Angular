@@ -9,6 +9,13 @@
 <p>avec pipe : {{today | date : "longDate" | uppercase}}</p>
 
 <p>avec custom pipe : {{ 2 | exponentialStrength : 10}}</p>
+
+<!-- classic interpolation -->
+<img src="{{imgUrl}}" alt="some image">
+
+<!-- dynamic properties == properties binding avec les []-->
+<img [src]="imgUrl" [alt]="name" [attr.data-name]="name" [attr.blabla]="name" >
+
   <!-- Highlight Card -->
   <div class="card highlight-card card-small">
 
