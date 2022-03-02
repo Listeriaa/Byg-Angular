@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'byg-ng-formation';
+
+  name = "Laetitia";
+
+  today = new Date();
 }
