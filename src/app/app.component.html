@@ -16,6 +16,23 @@
 <!-- dynamic properties == properties binding avec les []-->
 <img [src]="imgUrl" [alt]="name" [attr.data-name]="name" [attr.blabla]="name" >
 
+<!-- event binding (event-name)="methode()"  $event est facultatif-->
+<button type="button" (click)="clickMethod($event)">Cliquez</button>
+<p>
+<button type="button" (click)="toggleState()">switch disabled</button>
+<button [disabled]="state" type="button" (click)="toggleState()">Désactivé {{state}}</button>
+</p>
+
+<!-- classes -->
+<!-- peut également etre une expression/ condition -->
+<p [ngClass]="{disabled: state, otherClass: true}">quelques classes</p>
+
+<p [hidden]="!state">quelques classes</p>
+
+<!-- directive if -->
+<p *ngIf="state else other"> Je suis le if</p>
+
+<ng-template #other>je suis le else</ng-template>
   <!-- Highlight Card -->
   <div class="card highlight-card card-small">
 
