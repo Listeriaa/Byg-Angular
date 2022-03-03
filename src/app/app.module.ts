@@ -7,13 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ExponentialStrengthPipe } from './utils/pipes/exponential-strength.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderComponent } from './layout/components/header/header.component';
 
 @NgModule({
 
   //html syntax (composant, pipe, directive)
   declarations: [
     AppComponent,
-    ExponentialStrengthPipe
+    ExponentialStrengthPipe,
+    HeaderComponent
   ],
 
   //import de fonctionnalités (autres modules, qui font un export)
