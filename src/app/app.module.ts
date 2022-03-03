@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { ThemeModule } from './theme/theme.module';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ExponentialStrengthPipe } from './utils/pipes/exponential-strength.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
 
@@ -16,7 +19,10 @@ import { ExponentialStrengthPipe } from './utils/pipes/exponential-strength.pipe
   //import de fonctionnalités (autres modules, qui font un export)
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ThemeModule
+
   ],
   //si on veut exporter des fonctionnalités vers d'autres modules
   exports: [
