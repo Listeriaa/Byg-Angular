@@ -1,5 +1,7 @@
 import { Component, EventEmitter } from '@angular/core';
 
+
+//si on fait un composant monofichier, il faut enlever url de template et style et mettre directement le html et le style là
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,10 +16,10 @@ export class AppComponent {
 
   imgUrl = "https://angular.io/assets/images/logos/angular/logo-nav@2x.png";
 
-  state = false;
+  state = true;
 
   color ="blue";
-  
+
   clickMethod(event: MouseEvent): void {
     console.log('evenement', event)
   }

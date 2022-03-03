@@ -19,20 +19,26 @@
 <!-- event binding (event-name)="methode()"  $event est facultatif-->
 <button type="button" (click)="clickMethod($event)">Cliquez</button>
 <p>
-<button type="button" (click)="toggleState()">switch disabled</button>
-<button [disabled]="state" type="button" (click)="toggleState()">Désactivé {{state}}</button>
+<button type="button" (click)="toggleState()">switch du state</button>
+<button [disabled]="state" type="button" (click)="toggleState()">le state est : {{state}}</button>
 </p>
 
 <!-- classes -->
 <!-- peut également etre une expression/ condition -->
+
 <p [ngClass]="{disabled: state, otherClass: true}">quelques classes</p>
 
+<!-- display none mais visible dans le DOM : plus performant qu'un ngIf -->
 <p [hidden]="!state">quelques classes</p>
 
 <!-- directive if -->
+<!-- display none mais disparu du DOM-->
 <p *ngIf="state else other"> Je suis le if</p>
 
-<ng-template #other>je suis le else</ng-template>
+<ng-template #other><p>je suis le else</p></ng-template>
+
+
+
   <!-- Highlight Card -->
   <div class="card highlight-card card-small">
 
