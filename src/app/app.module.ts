@@ -8,6 +8,9 @@ import { AppComponent } from './app.component';
 import { ExponentialStrengthPipe } from './utils/pipes/exponential-strength.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './layout/components/header/header.component';
+import { HomePageComponent } from './global/home-page/home-page.component';
+import { GetStartedPageComponent } from './global/get-started-page/get-started-page.component';
+import { NotFoundPageComponent } from './global/not-found-page/not-found-page.component';
 
 @NgModule({
 
@@ -15,7 +18,10 @@ import { HeaderComponent } from './layout/components/header/header.component';
   declarations: [
     AppComponent,
     ExponentialStrengthPipe,
-    HeaderComponent
+    HeaderComponent,
+    HomePageComponent,
+    GetStartedPageComponent,
+    NotFoundPageComponent
   ],
 
   //import de fonctionnalités (autres modules, qui font un export)

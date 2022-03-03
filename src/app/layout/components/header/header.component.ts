@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
     <mat-toolbar color="primary">
       <span>Application Formation Angular</span>
      <ul class="menu">
-       <li class="menu-item">Lien 1</li>
-       <li class="menu-item">Lien 2</li>
-       <li class="menu-item">Lien 3</li>
+       <li class="menu-item" routerLink="/home" routerLinkActive="active">Home</li>
+       <li class="menu-item" routerLink="/get-started" routerLinkActive="active">Get Started</li>
+       <li class="menu-item" routerLink="/blog" routerLinkActive="active">Blog</li>
      </ul>
     </mat-toolbar>
     </header>
@@ -31,6 +31,9 @@ import { Component, OnInit } from '@angular/core';
         &:hover {
           text-decoration : underline;
           cursor: pointer;
+        }
+        &.active {
+          font-weight: bolder;
         }
       }
     }
