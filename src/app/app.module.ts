@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, PreloadOfflineModuleStrategy } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ExponentialStrengthPipe } from './utils/pipes/exponential-strength.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -37,7 +37,7 @@ import { SharedModule } from './utils/shared/shared.module';
 
   ],
   //injection de dependances
-  providers: [],
+  providers: [PreloadOfflineModuleStrategy],
 
   //On met dans le tableau ce qui doit se lancer au lancement de l'application (=au bootstraping de l'application)
   //souvent ce qui est dans le index.html

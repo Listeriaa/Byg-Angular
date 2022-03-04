@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ import { Component, OnInit } from '@angular/core';
           <li class="menu-item" routerLink="/blog" routerLinkActive="active">Blog</li>
           <li class="menu-item" routerLink="/product" routerLinkActive="active">Product</li>
           <li class="menu-item" routerLink="/cart" routerLinkActive="active">Cart</li>
-          <li class="menu-item" routerLink="/login" routerLinkActive="active">Login</li>
+          <li class="menu-item" *ngIf="!hideLogin" routerLink="/login" routerLinkActive="active">Login</li>
         </ul>
       </mat-toolbar>
     </header>
@@ -46,9 +47,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  hideLogin = false;
+
+  constructor(private authService: AuthService) {
+    console.log('random from header component', authService.random)
+  }
+
 
   ngOnInit(): void {
+    this.authService.isLoggedIn.subscribe(value => this.hideLogin = value )
+    console.log(this.hideLogin)
   }
 
 }
