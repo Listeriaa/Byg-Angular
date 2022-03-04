@@ -12,7 +12,8 @@ import { ProductCardComponent } from '../product-card/product-card.component';
 })
 export class ProductListComponent implements OnInit, AfterViewInit {
 
-  @ViewChildren(ProductCardComponent) productCards!: QueryList<ProductCardComponent>;
+  @ViewChildren(ProductCardComponent)
+  productCards!: QueryList<ProductCardComponent>;
 
   products: Product[] = new Array();
 
