@@ -11,7 +11,8 @@ import { HomePageComponent } from './global/home-page/home-page.component';
 import { GetStartedPageComponent } from './global/get-started-page/get-started-page.component';
 import { NotFoundPageComponent } from './global/not-found-page/not-found-page.component';
 import { SharedModule } from './utils/shared/shared.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpErrorInterceptor } from './utils/interceptors/http-error.interceptor';
 
 @NgModule({
 
@@ -39,7 +40,7 @@ import { HttpClientModule } from '@angular/common/http';
 
   ],
   //injection de dependances
-  providers: [PreloadOfflineModuleStrategy],
+  providers: [PreloadOfflineModuleStrategy, {provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true}],
 
   //On met dans le tableau ce qui doit se lancer au lancement de l'application (=au bootstraping de l'application)
   //souvent ce qui est dans le index.html

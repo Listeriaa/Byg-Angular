@@ -36,7 +36,8 @@ export class ProductListComponent implements OnInit, AfterViewInit {
   }
 
   loadProductsViaHttp() :void {
-    this.productService.listAllProducts().subscribe( products => this.products = products)
+    this.productService.listAllProducts()
+    .subscribe( products => this.products = products);
   }
 
 
