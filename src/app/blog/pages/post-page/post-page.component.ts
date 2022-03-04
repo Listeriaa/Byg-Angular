@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-post-page',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostPageComponent implements OnInit {
 
-  constructor() { }
+  id!: number;
+
+  constructor(route : ActivatedRoute) {
+
+    //pour récupérer les paramètres de l'url
+    this.id = Number(route.snapshot.paramMap.get('id'));
+
+   }
 
   ngOnInit(): void {
+    console.log(this.id)
   }
 
 }

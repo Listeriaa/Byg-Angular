@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { ThemeModule } from './theme/theme.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +10,7 @@ import { HeaderComponent } from './layout/components/header/header.component';
 import { HomePageComponent } from './global/home-page/home-page.component';
 import { GetStartedPageComponent } from './global/get-started-page/get-started-page.component';
 import { NotFoundPageComponent } from './global/not-found-page/not-found-page.component';
+import { SharedModule } from './utils/shared/shared.module';
 
 @NgModule({
 
@@ -29,7 +29,7 @@ import { NotFoundPageComponent } from './global/not-found-page/not-found-page.co
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ThemeModule
+    SharedModule
 
   ],
   //si on veut exporter des fonctionnalités vers d'autres modules

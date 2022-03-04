@@ -2,19 +2,25 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatBadgeModule} from '@angular/material/badge';
 
-export const MATERIAL_MODULES = [
+const MATERIAL_MODULES = [
   MatToolbarModule,
   MatButtonModule,
-  MatCheckboxModule
+  MatCardModule,
+  MatIconModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatBadgeModule
 ]
 
 @NgModule({
-  //on peut y mettre aussi des composants par ex (il faut le mettre dans declaration et dans export)
-  declarations: [],
-  imports: [
-    CommonModule
+  declarations: [
+
   ],
   exports: [
     ...MATERIAL_MODULES

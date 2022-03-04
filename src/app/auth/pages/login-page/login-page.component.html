@@ -1,0 +1,13 @@
+<form #myForm="ngForm" (submit)="submit()">
+    <ul *ngIf="myForm.touched && !myForm.valid">
+      <li *ngIf="emailInput.required">Please fill email</li>
+    </ul>
+    <mat-form-field>
+        <input matInput placeholder="Email" name="email" [(ngModel)]="credentials.email" required #emailInput>
+    </mat-form-field>
+    <mat-form-field>
+        <input type="password" matInput placeholder="Password" name="password" [(ngModel)]="credentials.password"
+            required>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary" [disabled]="!myForm.valid">Sign in</button>
+</form>
