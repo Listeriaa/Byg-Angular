@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Observable } from 'rxjs';
 import { PRODUCTS } from '../../mocks/products-data.mock';
 import { Product } from '../../models/product';
+import { ProductService } from '../../services/product.service';
 import { ProductCardComponent } from '../product-card/product-card.component';
 
 @Component({
@@ -15,12 +17,12 @@ export class ProductListComponent implements OnInit, AfterViewInit {
   products: Product[] = new Array();
 
   // DI
-  constructor(
-  ) { }
+  constructor(private productService: ProductService) { }
 
   // Initialization
   ngOnInit() {
-    this.loadProductsViaMock();
+    //this.loadProductsViaMock();
+    this.loadProductsViaHttp();
   }
 
   ngAfterViewInit() {
@@ -30,6 +32,10 @@ export class ProductListComponent implements OnInit, AfterViewInit {
   loadProductsViaMock() {
     // via mock
     this.products = PRODUCTS;
+  }
+
+  loadProductsViaHttp() :void {
+    this.productService.listAllProducts().subscribe( products => this.products = products)
   }
 
 

@@ -16,6 +16,7 @@ const routes: Routes = [
   {path: '**', component: NotFoundPageComponent},
 ];
 
+//On peut aussi le décorer avec @injectable plutot que de le provider dans app.module
 export class PreloadOfflineModuleStrategy implements PreloadingStrategy {
     preload(route: Route, load: Function): Observable<any> {
       return route.data && route.data['offline'] ? load() : of(null);

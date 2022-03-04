@@ -11,6 +11,7 @@ import { HomePageComponent } from './global/home-page/home-page.component';
 import { GetStartedPageComponent } from './global/get-started-page/get-started-page.component';
 import { NotFoundPageComponent } from './global/not-found-page/not-found-page.component';
 import { SharedModule } from './utils/shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
 
@@ -29,7 +30,8 @@ import { SharedModule } from './utils/shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
 
   ],
   //si on veut exporter des fonctionnalités vers d'autres modules
